@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="ddsm_robot">
+  <xacro:macro name="ddsm_robot" params="prefix:=''">
+
+    <!-- Constants for robot dimensions -->
+    <xacro:property name="base_length" value="0.5" />
+    <xacro:property name="base_width" value="0.3" />
+    <xacro:property name="base_height" value="0.1" />
+    <xacro:property name="wheel_radius" value="0.1" />
+    <xacro:property name="wheel_width" value="0.05" />
+    <xacro:property name="wheel_height" value="0.05" />
+
+    <!-- Base link -->
+    <link name="${prefix}base_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="${base_length} ${base_width} ${base_height}"/>
+        </geometry>
+        <material name="gray">
+          <color rgba="0.5 0.5 0.5 1.0"/>
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="${base_length} ${base_width} ${base_height}"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- Wheels -->
+    <link name="${prefix}front_left_wheel_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+        <geometry>
+          <cylinder radius="${wheel_radius}" length="${wheel_width}"/>
+        </geometry>
+        <material name="black">
+          <color rgba="0 0 0 1.0"/>
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+        <geometry>
+          <cylinder radius="${wheel_radius}" length="${wheel_width}"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="${prefix}front_right_wheel_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+        <geometry>
+          <cylinder radius="${wheel_radius}" length="${wheel_width}"/>
+        </geometry>
+        <material name="black">
+          <color rgba="0 0 0 1.0"/>
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+        <geometry>
+          <cylinder radius="${wheel_radius}" length="${wheel_width}"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="${prefix}rear_left_wheel_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+        <geometry>
+          <cylinder radius="${wheel_radius}" length="${wheel_width}"/>
+        </geometry>
+        <material name="black">
+          <color rgba="0 0 0 1.0"/>
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+        <geometry>
+          <cylinder radius="${wheel_radius}" length="${wheel_width}"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="${prefix}rear_right_wheel_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+        <geometry>
+          <cylinder radius="${wheel_radius}" length="${wheel_width}"/>
+        </geometry>
+        <material name="black">
+          <color rgba="0 0 0 1.0"/>
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+        <geometry>
+          <cylinder radius="${wheel_radius}" length="${wheel_width}"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- Joints -->
+    <joint name="${prefix}front_left_wheel_joint" type="continuous">
+      <parent link="${prefix}base_link"/>
+      <child link="${prefix}front_left_wheel_link"/>
+      <origin xyz="${base_length/2 - 0.05} ${base_width/2 + 0.02} 0" rpy="0 0 0"/>
+      <axis xyz="0 1 0"/>
+    </joint>
+
+    <joint name="${prefix}front_right_wheel_joint" type="continuous">
+      <parent link="${prefix}base_link"/>
+      <child link="${prefix}front_right_wheel_link"/>
+      <origin xyz="${base_length/2 - 0.05} ${-base_width/2 - 0.02} 0" rpy="0 0 0"/>
+      <axis xyz="0 1 0"/>
+    </joint>
+
+    <joint name="${prefix}rear_left_wheel_joint" type="continuous">
+      <parent link="${prefix}base_link"/>
+      <child link="${prefix}rear_left_wheel_link"/>
+      <origin xyz="${-base_length/2 + 0.05} ${base_width/2 + 0.02} 0" rpy="0 0 0"/>
+      <axis xyz="0 1 0"/>
+    </joint>
+
+    <joint name="${prefix}rear_right_wheel_joint" type="continuous">
+      <parent link="${prefix}base_link"/>
+      <child link="${prefix}rear_right_wheel_link"/>
+      <origin xyz="${-base_length/2 + 0.05} ${-base_width/2 - 0.02} 0" rpy="0 0 0"/>
+      <axis xyz="0 1 0"/>
+    </joint>
+
+  </xacro:macro>
+
+  <!-- Instantiate the robot -->
+  <xacro:ddsm_robot/>
+
+  <xacro:include filename="$(find ddsm_mobile_bringup)/urdf/ddsm_ros2_control.xacro"/>
+</robot>

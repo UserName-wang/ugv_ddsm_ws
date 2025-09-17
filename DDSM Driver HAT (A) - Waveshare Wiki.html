@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)https://www.waveshare.net/wiki/DDSM_Driver_HAT_(A) -->
+<html class="client-js" lang="zh-Hans-CN" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>DDSM Driver HAT (A) - Waveshare Wiki</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!1,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"zh","wgMonthNames":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgRequestId":"1a7ca04aebe7d7609d6f7057","wgCSPNonce":!1,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"DDSM_Driver_HAT_(A)","wgTitle":"DDSM Driver HAT (A)","wgCurRevisionId":128300,"wgRevisionId":128300,"wgArticleId":22656,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["UART接口","RS485接口","USB接口","模块","机器人","机器人扩展板"],"wgPageContentLanguage":"zh-cn","wgPageContentModel":"wikitext","wgRelevantPageName":"DDSM_Driver_HAT_(A)","wgRelevantArticleId":22656,"wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[
+]};RLSTATE={"ext.gadget.tabber":"ready","site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","jquery.makeCollapsible.styles":"ready","mediawiki.toc.styles":"ready","skins.tweeki.styles":"ready","skins.tweeki.bootstraptheme.styles":"ready","skins.tweeki.externallinks.styles":"ready","skins.tweeki.awesome.styles":"ready"};RLPAGEMODULES=["site","mediawiki.page.startup","mediawiki.page.ready","jquery.makeCollapsible","mediawiki.toc","ext.FancyBoxThumbs","ext.gadget.subnavber","ext.gadget.slidenav","ext.HighlightjsIntegration","skins.tweeki.messages","skins.tweeki.scripts"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});mw.user.options.set({"variant":"zh-cn"});
+});});</script>
+<link rel="stylesheet" href="./DDSM Driver HAT (A) - Waveshare Wiki_files/load.php">
+<script async="" src="./DDSM Driver HAT (A) - Waveshare Wiki_files/load(1).php"></script>
+<style>
+.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}.mw-collapsible-toggle-default:before{content:'['}.mw-collapsible-toggle-default:after{content:']'}.mw-customtoggle,.mw-collapsible-toggle{cursor:pointer} caption .mw-collapsible-toggle,.mw-content-ltr caption .mw-collapsible-toggle,.mw-content-rtl caption .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr caption .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl caption .mw-collapsible-toggle{float:none}
+pre.code2highlight,pre.nohighlight{  padding:0.5em}code.code2highlight.hljs{  padding:1px 4px}.hljs{display:block;overflow-x:auto;padding:0.5em;background:#1E1E1E;color:#DCDCDC}.hljs-keyword,.hljs-literal,.hljs-symbol,.hljs-name{color:#569CD6}.hljs-link{color:#569CD6;text-decoration:underline}.hljs-built_in,.hljs-type{color:#4EC9B0}.hljs-number,.hljs-class{color:#B8D7A3}.hljs-string,.hljs-meta-string{color:#D69D85}.hljs-regexp,.hljs-template-tag{color:#9A5334}.hljs-subst,.hljs-function,.hljs-title,.hljs-params,.hljs-formula{color:#DCDCDC}.hljs-comment,.hljs-quote{color:#57A64A;font-style:italic}.hljs-doctag{color:#608B4E}.hljs-meta,.hljs-meta-keyword,.hljs-tag{color:#9B9B9B}.hljs-variable,.hljs-template-variable{color:#BD63C5}.hljs-attr,.hljs-attribute,.hljs-builtin-name{color:#9CDCFE}.hljs-section{color:gold}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:bold}.hljs-bullet,.hljs-selector-tag,.hljs-selector-id,.hljs-selector-class,.hljs-selector-attr,.hljs-selector-pseudo{color:#D7BA7D}.hljs-addition{background-color:#144212;display:inline-block;width:100%}.hljs-deletion{background-color:#600;display:inline-block;width:100%}
+.fancybox-wrap,.fancybox-skin,.fancybox-outer,.fancybox-inner,.fancybox-image,.fancybox-wrap iframe,.fancybox-wrap object,.fancybox-nav,.fancybox-nav span,.fancybox-tmp{padding:0;margin:0;border:0;outline:none;vertical-align:top}.fancybox-wrap{position:absolute;top:0;left:0;z-index:8020}.fancybox-skin{position:relative;background:#f9f9f9;color:#444;text-shadow:none;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px}.fancybox-opened{z-index:8030}.fancybox-opened .fancybox-skin{-webkit-box-shadow:0 10px 25px rgba(0,0,0,0.5);-moz-box-shadow:0 10px 25px rgba(0,0,0,0.5);box-shadow:0 10px 25px rgba(0,0,0,0.5)}.fancybox-outer,.fancybox-inner{position:relative}.fancybox-inner{overflow:hidden}.fancybox-type-iframe .fancybox-inner{-webkit-overflow-scrolling:touch}.fancybox-error{color:#444;font:14px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;margin:0;padding:15px;white-space:nowrap}.fancybox-image,.fancybox-iframe{display:block;width:100%;height:100%}.fancybox-image{max-width:100%;max-height:100%}#fancybox-loading,.fancybox-close,.fancybox-prev span,.fancybox-next span{background-image:url(/w/extensions/FancyBoxThumbs/modules/fancyBox/source/fancybox_sprite.png?783d4)}#fancybox-loading{position:fixed;top:50%;left:50%;margin-top:-22px;margin-left:-22px;background-position:0 -108px;opacity:0.8;cursor:pointer;z-index:8060}#fancybox-loading div{width:44px;height:44px;background:url(/w/extensions/FancyBoxThumbs/modules/fancyBox/source/fancybox_loading.gif?c6f1a) center center no-repeat}.fancybox-close{position:absolute;top:-18px;right:-18px;width:36px;height:36px;cursor:pointer;z-index:8040}.fancybox-nav{position:absolute;top:0;width:40%;height:100%;cursor:pointer;text-decoration:none;background:transparent url(/w/extensions/FancyBoxThumbs/modules/fancyBox/source/blank.gif?32547); -webkit-tap-highlight-color:rgba(0,0,0,0);z-index:8040}.fancybox-prev{left:0}.fancybox-next{right:0}.fancybox-nav span{position:absolute;top:50%;width:36px;height:34px;margin-top:-18px;cursor:pointer;z-index:8040;visibility:hidden}.fancybox-prev span{left:10px;background-position:0 -36px}.fancybox-next span{right:10px;background-position:0 -72px}.fancybox-nav:hover span{visibility:visible}.fancybox-tmp{position:absolute;top:-99999px;left:-99999px;visibility:hidden;max-width:99999px;max-height:99999px;overflow:visible !important} .fancybox-lock{overflow:hidden}.fancybox-overlay{position:absolute;top:0;left:0;overflow:hidden;display:none;z-index:8010;background:url(/w/extensions/FancyBoxThumbs/modules/fancyBox/source/fancybox_overlay.png?77aea)}.fancybox-overlay-fixed{position:fixed;bottom:0;right:0}.fancybox-lock .fancybox-overlay{overflow:auto;overflow-y:scroll} .fancybox-title{visibility:hidden;font:normal 13px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;position:relative;text-shadow:none;z-index:8050}.fancybox-opened .fancybox-title{visibility:visible}.fancybox-title-float-wrap{position:absolute;bottom:0;right:50%;margin-bottom:-35px;z-index:8050;text-align:center}.fancybox-title-float-wrap .child{display:inline-block;margin-right:-100%;padding:2px 20px;background:transparent; background:rgba(0,0,0,0.8);-webkit-border-radius:15px;-moz-border-radius:15px;border-radius:15px;text-shadow:0 1px 2px #222;color:#FFF;font-weight:bold;line-height:24px;white-space:nowrap}.fancybox-title-outside-wrap{position:relative;margin-top:10px;color:#fff}.fancybox-title-inside-wrap{padding-top:10px}.fancybox-title-over-wrap{position:absolute;bottom:0;left:0;color:#fff;padding:10px;background:#000;background:rgba(0,0,0,.8)}
+.subnavberlive .subnavbertabhide{display:none}.subnavberlive{margin-top:0px;min-width:260px}.subnavberlive .subnavbertab{padding:5px} .subnavberlive#tab2 .subnavbertab{height:200px;overflow:auto}ul.subnavbernav{ display:block;padding:0 0 0 1px!important;margin:0 0 10px 0!important; height:50px;list-style:none;line-height:1.4;color:#333; }ul.subnavbernav li{ margin:0px;height:50px;text-align:center; float:none;display:table-cell;width:1%}ul.subnavbernav li a{ display:block;margin:0 0 0 -1px;height:50px;padding:0px 5px;line-height:50px;border:solid 2px #fff;border-width:2px 2px 2px 2px; color:#333;background:#f7f7f7; text-decoration:none;overflow:hidden}ul.subnavbernav li a:link{color:#333}ul.subnavbernav li a:visited{color:#667}ul.subnavbernav li a:hover{color:#000;background:#FFF; }ul.subnavbernav li.subnavberactive a{background-color:#fff;position:relative;height:50px; font-weight:bold} .pink-color ul.subnavbernav li.subnavberactive a{background-color:#bc1d46;color:#fff}.black-color ul.subnavbernav li.subnavberactive a{background-color:#2c2c2c;color:#fff}.deep-grey ul.subnavbernav li.subnavberactive a{background-color:#4f5f79;color:#fff}.blue-color ul.subnavbernav li.subnavberactive a{background-color:#36A5E8;color:#fff}.jet-green-color ul.subnavbernav li.subnavberactive a{background-color:#7eb128;color:#fff}.arduino-green-color ul.subnavbernav li.subnavberactive a{background-color:#00989d;color:#fff}.subnavberlive{  width:100%;top:20px;z-index:9; }.subnavberlive a{ border-radius:7px; background:rgba(255,255,255,0.5);-webkit-transition:all 0.2s ease-out;-moz-transition:all 0.2s ease-out;-ms-transition:all 0.2s ease-out;-o-transition:all 0.2s ease-out;transition:all 0.2s ease-out;text-decoration:none;color:black;font-family:sans-serif,arial;font-weight:100}.subnavberlive a.active{background:rgba(0,0,0,0.5);color:white}.subnavberlive a:hover{background:rgba(255,255,255,0.7)}
+.nav-link{ border-radius:2em;transition:all .4s} .blue-color ul.tabbernav li a.active{background-color:#36A5E8;color:#fff!important;font-weight:bold}.blue-color ul.tabbernav li a{color:#36A5E8 !important;font-weight:500}.pink-color ul.tabbernav li a.active{background-color:#bc1d46;color:#fff!important;font-weight:bold}.pink-color ul.tabbernav li a{color:#bc1d46 !important;font-weight:500}.jet-green-color ul.tabbernav li a.active{background-color:#7eb128;color:#fff!important;font-weight:bold}.jet-green-color ul.tabbernav li a{color:#7eb128 !important;font-weight:500}.arduino-green-color ul.tabbernav li a.active{background-color:#00989d;color:#fff!important;font-weight:bold}.arduino-green-color ul.tabbernav li a{color:#00989d !important;font-weight:500}.black-color ul.tabbernav li a.active{background-color:#2c2c2c;color:#fff!important;font-weight:bold}.black-color ul.tabbernav li a{color:#2c2c2c !important;font-weight:500}
+@media screen {
+	.toctoggle{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none;font-size:94%}}</style><meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="./DDSM Driver HAT (A) - Waveshare Wiki_files/load(2).php">
+<link rel="stylesheet" href="./DDSM Driver HAT (A) - Waveshare Wiki_files/load(3).php">
+<meta name="generator" content="MediaWiki 1.35.5">
+<meta property="og:image" content="https://www.waveshare.net/w/upload/thumb/8/80/DDSM_Driver_HAT_%28A%29.jpg/1200px-DDSM_Driver_HAT_%28A%29.jpg">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="https://www.waveshare.net/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://www.waveshare.net/w/opensearch_desc.php" title="Waveshare Wiki (zh-cn)">
+<link rel="EditURI" type="application/rsd+xml" href="https://www.waveshare.net/w/api.php?action=rsd">
+<link rel="alternate" type="application/atom+xml" title="Waveshare Wiki的Atom feed" href="https://www.waveshare.net/w/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom">
+<!--[if lt IE 9]><script src="/w/resources/lib/html5shiv/html5shiv.js"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-DDSM_Driver_HAT_A rootpage-DDSM_Driver_HAT_A skin-tweeki action-view tweeki-animateLayout tweeki-non-advanced tweeki-user-anon" style="margin-bottom: 0px; position: relative;">			<!-- navbar -->
+			<div id="mw-navigation" class="navbar navbar-default navbar-fixed-top navbar-expand-lg fixed-top navbar-light bg-light" role="navigation">
+				<h2>导航菜单</h2>
+				<div id="mw-head" class="navbar-inner">
+					<div class="container">
+
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+
+							<a href="https://www.waveshare.net/wiki/Main_Page" class="navbar-brand"><img src="./DDSM Driver HAT (A) - Waveshare Wiki_files/Waveshare-logo.png" alt="Waveshare Wiki"></a>
+						</div>
+
+						<div id="navbar" class="navbar-collapse collapse">
+													<ul class="nav navbar-nav">
+							<li class="nav"><a href="https://www.waveshare.net/" id="n-https.253A.252F.252Fwww.waveshare.net" rel="nofollow" target="_blank">微雪商城</a></li><li class="nav"><a href="https://www.waveshare.net/study/portal.php" id="n-https.253A.252F.252Fwww.waveshare.net.252Fstudy.252Fportal.php" rel="nofollow" target="_blank">微雪课堂</a></li><li class="nav"><a href="https://www.waveshare.net/wiki/DDSM_Driver_HAT_(A)#" id="n-raspberry-pi" class="dropdown-toggle" data-toggle="dropdown">Raspberry Pi <b class="caret"></b></a><ul class="dropdown-menu " role="menu"><li id="n-.255Bhttps.253A.252F.252F.257B.257Bservername.257D.257D.252Fwiki.252Fmain_page.2523rpi-boards-.25E4.25B8.25BB.25E6.259D.25BF.252F.25E5.25A5.2597.25E4.25BB.25B6.255D"><a href="invalid-title:[https://www.waveshare.net/wiki/Main_Page#RPi-Boards%20%E4%B8%BB%E6%9D%BF/%E5%A5%97%E4%BB%B6]" tabindex="-1"></a><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://www.waveshare.net/wiki/Main_Page#RPi-Boards">主板/套件</a></li><li id="n-.255Bhttps.253A.252F.252F.257B.257Bservername.257D.257D.252Fwiki.252Fmain_page.2523rpi-displays-.25E6.2598.25BE.25E7.25A4.25BA.25E5.25B1.258F.255D"><a href="invalid-title:[https://www.waveshare.net/wiki/Main_Page#RPi-Displays%20%E6%98%BE%E7%A4%BA%E5%B1%8F]" tabindex="-1"></a><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://www.waveshare.net/wiki/Main_Page#RPi-Displays">显示屏</a></li><li id="n-.255Bhttps.253A.252F.252F.257B.257Bservername.257D.257D.252Fwiki.252Fmain_page.2523rpi-cameras-.25E6.2591.2584.25E5.2583.258F.25E5.25A4.25B4.255D"><a href="invalid-title:[https://www.waveshare.net/wiki/Main_Page#RPi-Cameras%20%E6%91%84%E5%83%8F%E5%A4%B4]" tabindex="-1"></a><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://www.waveshare.net/wiki/Main_Page#RPi-Cameras">摄像头</a></li><li id="n-.255Bhttps.253A.252F.252F.257B.257Bservername.257D.257D.252Fwiki.252Fmain_page.2523rpi-expansions-.25E6.2589.25A9.25E5.25B1.2595.25E6.259D.25BF.255D"><a href="invalid-title:[https://www.waveshare.net/wiki/Main_Page#RPi-Expansions%20%E6%89%A9%E5%B1%95%E6%9D%BF]" tabindex="-1"></a><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://www.waveshare.net/wiki/Main_Page#RPi-Expansions">扩展板</a></li><li id="n-.255Bhttps.253A.252F.252F.257B.257Bservername.257D.257D.252Fwiki.252Fmain_page.2523rpi-laptops-.25E7.25AC.2594.25E8.25AE.25B0.25E6.259C.25AC.255D"><a href="invalid-title:[https://www.waveshare.net/wiki/Main_Page#RPi-Laptops%20%E7%AC%94%E8%AE%B0%E6%9C%AC]" tabindex="-1"></a><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://www.waveshare.net/wiki/Main_Page#RPi-Laptops">笔记本</a></li><li id="n-.255Bhttps.253A.252F.252F.257B.257Bservername.257D.257D.252Fwiki.252Fmain_page.2523rpi-robots-.25E6.259C.25BA.25E5.2599.25A8.25E4.25BA.25BA.255D"><a href="invalid-title:[https://www.waveshare.net/wiki/Main_Page#RPi-Robots%20%E6%9C%BA%E5%99%A8%E4%BA%BA]" tabindex="-1"></a><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://www.waveshare.net/wiki/Main_Page#RPi-Robots">机器人</a></li><li id="n-.255Bhttps.253A.252F.252F.257B.257Bservername.257D.257D.252Fwiki.252Fmain_page.2523rpi-games-.25E6.25B8.25B8.25E6.2588.258F.25E6.259C.25BA.255D"><a href="invalid-title:[https://www.waveshare.net/wiki/Main_Page#RPi-Games%20%E6%B8%B8%E6%88%8F%E6%9C%BA]" tabindex="-1"></a><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://www.waveshare.net/wiki/Main_Page#RPi-Games">游戏机</a></li><li id="n-.255Bhttps.253A.252F.252F.257B.257Bservername.257D.257D.252Fwiki.252Fmain_page.2523android-linux-boards-android.252Flinux.25E4.25B8.25BB.25E6.259D.25BF.255D"><a href="invalid-title:[https://www.waveshare.net/wiki/Main_Page#Android-Linux-Boards%20Android/Linux%E4%B8%BB%E6%9D%BF]" tabindex="-1"></a><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://www.waveshare.net/wiki/Main_Page#Android-Linux-Boards">Android/Linux主板</a></li></ul></li><li class="nav"><a href="https://www.waveshare.net/wiki/DDSM_Driver_HAT_(A)#" id="n-.25E4.25BA.25BA.25E5.25B7.25A5.25E6.2599.25BA.25E8.2583.25BD" class="dropdown-toggle" data-toggle="dropdown">人工智能 <b class="caret"></b></a><ul class="dropdown-menu " role="menu"><li id="n-.255Bhttps.253A.252F.252F.257B.257Bservername.257D.257D.252Fwiki.252Fmain_page.2523jetson-ai-boards-.25E4.25B8.25BB.25E6.259D.25BF.252F.25E5.25A5.2597.25E4.25BB.25B6.255D"><a href="invalid-title:[https://www.waveshare.net/wiki/Main_Page#Jetson-AI-Boards%20%E4%B8%BB%E6%9D%BF/%E5%A5%97%E4%BB%B6]" tabindex="-1"></a><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://www.waveshare.net/wiki/Main_Page#Jetson-AI-Boards">主板/套件</a></li><li id="n-.255Bhttps.253A.252F.252F.257B.257Bservername.257D.257D.252Fwiki.252Fmain_page.2523jetson-ai-displays-.25E6.2598.25BE.25E7.25A4.25BA.25E5.25B1.258F.255D"><a href="invalid-title:[https://www.waveshare.net/wiki/Main_Page#Jetson-AI-Displays%20%E6%98%BE%E7%A4%BA%E5%B1%8F]" tabindex="-1"></a><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://www.waveshare.net/wiki/Main_Page#Jetson-AI-Displays">显示屏</a></li><li id="n-.255Bhttps.253A.252F.252F.257B.257Bservername.257D.257D.252Fwiki.252Fmain_page.2523jetson-ai-cameras-.25E6.2591.2584.25E5.2583.258F.25E5.25A4.25B4.255D"><a href="invalid-title:[https://www.waveshare.net/wiki/Main_Page#Jetson-AI-Cameras%20%E6%91%84%E5%83%8F%E5%A4%B4]" tabindex="-1"></a><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://www.waveshare.net/wiki/Main_Page#Jetson-AI-Cameras">摄像头</a></li><li id="n-.255Bhttps.253A.252F.252F.257B.257Bservername.257D.257D.252Fwiki.252Fmain_page.2523jetson-ai-hat-.25E6.2589.25A9.25E5.25B1.2595.25E6.259D.25BF.255D"><a href="invalid-title:[https://www.waveshare.net/wiki/Main_Page#Jetson-AI-HAT%20%E6%89%A9%E5%B1%95%E6%9D%BF]" tabindex="-1"></a><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://www.waveshare.net/wiki/Main_Page#Jetson-AI-HAT">扩展板</a></li><li id="n-.255Bhttps.253A.252F.252F.257B.257Bservername.257D.257D.252Fwiki.252Fmain_page.2523jetson-ai-robots-.25E6.259C.25BA.25E5.2599.25A8.25E4.25BA.25BA.255D"><a href="invalid-title:[https://www.waveshare.net/wiki/Main_Page#Jetson-AI-Robots%20%E6%9C%BA%E5%99%A8%E4%BA%BA]" tabindex="-1"></a><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://www.waveshare.net/wiki/Main_Page#Jetson-AI-Robots">机器人</a></li></ul></li><li class="nav"><a href="https://www.waveshare.net/wiki/DDSM_Driver_HAT_(A)#" id="n-.25E6.2598.25BE.25E7.25A4.25BA.25E5.25B1.258F" class="dropdown-toggle" data-toggle="dropdown">显示屏 <b class="caret"></b></a><ul class="dropdown-menu " role="menu"><li id="n-.255Bhttps.253A.252F.252F.257B.257Bservername.257D.257D.252Fwiki.252Fmain_page.2523display-lcd-oleds-lcd.252Foled.255D"><a href="invalid-title:[https://www.waveshare.net/wiki/Main_Page#Display-LCD-OLEDs%20LCD/OLED]" tabindex="-1"></a><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://www.waveshare.net/wiki/Main_Page#Display-LCD-OLEDs">LCD/OLED</a></li><li id="n-.255Bhttps.253A.252F.252F.257B.257Bservername.257D.257D.252Fwiki.252Fmain_page.2523display-e-paper-e-paper.255D"><a href="invalid-title:[https://www.waveshare.net/wiki/Main_Page#Display-e-Paper%20e-Paper]" tabindex="-1"></a><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://www.waveshare.net/wiki/Main_Page#Display-e-Paper">e-Paper</a></li></ul></li><li class="nav"><a href="https://www.waveshare.net/wiki/DDSM_Driver_HAT_(A)#" id="n-.25E6.25A8.25A1.25E5.259D.2597" class="dropdown-toggle" data-toggle="dropdown">模块 <b class="caret"></b></a><ul class="dropdown-menu " role="menu"><li id="n-.255Bhttps.253A.252F.252F.257B.257Bservername.257D.257D.252Fwiki.252Fmain_page.2523long-range-wireless-comm-.25E8.25BF.259C.25E8.25B7.259D.25E7.25A6.25BB.25E6.2597.25A0.25E7.25BA.25BF.25E9.2580.259A.25E4.25BF.25A1.255D"><a href="invalid-title:[https://www.waveshare.net/wiki/Main_Page#Long-range-wireless-comm%20%E8%BF%9C%E8%B7%9D%E7%A6%BB%E6%97%A0%E7%BA%BF%E9%80%9A%E4%BF%A1]" tabindex="-1"></a><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://www.waveshare.net/wiki/Main_Page#Long-range-wireless-comm">远距离无线通信</a></li><li id="n-.255Bhttps.253A.252F.252F.257B.257Bservername.257D.257D.252Fwiki.252Fmain_page.2523short-range-wireless-comm-.25E8.25BF.2591.25E8.25B7.259D.25E7.25A6.25BB.25E6.2597.25A0.25E7.25BA.25BF.25E9.2580.259A.25E4.25BF.25A1.255D"><a href="invalid-title:[https://www.waveshare.net/wiki/Main_Page#Short-range-wireless-comm%20%E8%BF%91%E8%B7%9D%E7%A6%BB%E6%97%A0%E7%BA%BF%E9%80%9A%E4%BF%A1]" tabindex="-1"></a><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://www.waveshare.net/wiki/Main_Page#Short-range-wireless-comm">近距离无线通信</a></li><li id="n-.255Bhttps.253A.252F.252F.257B.257Bservername.257D.257D.252Fwiki.252Fmain_page.2523wired-communication-.25E6.259C.2589.25E7.25BA.25BF.25E9.2580.259A.25E4.25BF.25A1.252F.25E6.258E.25A5.25E5.258F.25A3.25E8.25BD.25AC.25E6.258D.25A2.255D"><a href="invalid-title:[https://www.waveshare.net/wiki/Main_Page#Wired-communication%20%E6%9C%89%E7%BA%BF%E9%80%9A%E4%BF%A1/%E6%8E%A5%E5%8F%A3%E8%BD%AC%E6%8D%A2]" tabindex="-1"></a><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://www.waveshare.net/wiki/Main_Page#Wired-communication">有线通信/接口转换</a></li><li id="n-.255Bhttps.253A.252F.252F.257B.257Bservername.257D.257D.252Fwiki.252Fmain_page.2523misc-cameras-av-.25E6.2591.2584.25E5.2583.258F.25E5.25A4.25B4.252F.25E9.259F.25B3.25E8.25A7.2586.25E9.25A2.2591.255D"><a href="invalid-title:[https://www.waveshare.net/wiki/Main_Page#Misc-cameras-av%20%E6%91%84%E5%83%8F%E5%A4%B4/%E9%9F%B3%E8%A7%86%E9%A2%91]" tabindex="-1"></a><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://www.waveshare.net/wiki/Main_Page#Misc-cameras-av">摄像头/音视频</a></li><li id="n-.255Bhttps.253A.252F.252F.257B.257Bservername.257D.257D.252Fwiki.252Fmain_page.2523misc-sensor-modules-.25E4.25BC.25A0.25E6.2584.259F.25E5.2599.25A8.255D"><a href="invalid-title:[https://www.waveshare.net/wiki/Main_Page#Misc-sensor-modules%20%E4%BC%A0%E6%84%9F%E5%99%A8]" tabindex="-1"></a><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://www.waveshare.net/wiki/Main_Page#Misc-sensor-modules">传感器</a></li><li id="n-.255Bhttps.253A.252F.252F.257B.257Bservername.257D.257D.252Fwiki.252Fmain_page.2523misc-servos-motors-.25E7.2594.25B5.25E6.259C.25BA.252F.25E8.2588.25B5.25E6.259C.25BA.255D"><a href="invalid-title:[https://www.waveshare.net/wiki/Main_Page#Misc-servos-motors%20%E7%94%B5%E6%9C%BA/%E8%88%B5%E6%9C%BA]" tabindex="-1"></a><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://www.waveshare.net/wiki/Main_Page#Misc-servos-motors">电机/舵机</a></li><li id="n-.255Bhttps.253A.252F.252F.257B.257Bservername.257D.257D.252Fwiki.252Fmain_page.2523misc-other-modules-.25E5.25A4.25A7.25E6.259D.2582.25E7.2583.25A9.255D"><a href="invalid-title:[https://www.waveshare.net/wiki/Main_Page#Misc-other-modules%20%E5%A4%A7%E6%9D%82%E7%83%A9]" tabindex="-1"></a><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://www.waveshare.net/wiki/Main_Page#Misc-other-modules">大杂烩</a></li></ul></li><li class="nav"><a href="https://www.waveshare.net/wiki/DDSM_Driver_HAT_(A)#" id="n-.25E6.259C.25BA.25E5.2599.25A8.25E4.25BA.25BA" class="dropdown-toggle" data-toggle="dropdown">机器人 <b class="caret"></b></a><ul class="dropdown-menu " role="menu"><li id="n-.255Bhttps.253A.252F.252F.257B.257Bservername.257D.257D.252Fwiki.252Fmain_page.2523robotics-cars-.25E6.2599.25BA.25E8.2583.25BD.25E8.25BD.25A6.255D"><a href="invalid-title:[https://www.waveshare.net/wiki/Main_Page#Robotics-cars%20%E6%99%BA%E8%83%BD%E8%BD%A6]" tabindex="-1"></a><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://www.waveshare.net/wiki/Main_Page#Robotics-cars">智能车</a></li><li id="n-.255Bhttps.253A.252F.252F.257B.257Bservername.257D.257D.252Fwiki.252Fmain_page.2523robotics-drivers-sensors-.25E9.25A9.25B1.25E5.258A.25A8.25E5.2599.25A8.252F.25E4.25BC.25A0.25E6.2584.259F.25E5.2599.25A8.255D"><a href="invalid-title:[https://www.waveshare.net/wiki/Main_Page#Robotics-drivers-sensors%20%E9%A9%B1%E5%8A%A8%E5%99%A8/%E4%BC%A0%E6%84%9F%E5%99%A8]" tabindex="-1"></a><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://www.waveshare.net/wiki/Main_Page#Robotics-drivers-sensors">驱动器/传感器</a></li><li id="n-.255Bhttps.253A.252F.252F.257B.257Bservername.257D.257D.252Fwiki.252Fmain_page.2523robotics-robot-arms-.25E6.259C.25BA.25E6.25A2.25B0.25E6.2589.258B.252F.25E4.25BA.2591.25E5.258F.25B0.25E6.258E.25A7.25E5.2588.25B6.255D"><a href="invalid-title:[https://www.waveshare.net/wiki/Main_Page#Robotics-robot-arms%20%E6%9C%BA%E6%A2%B0%E6%89%8B/%E4%BA%91%E5%8F%B0%E6%8E%A7%E5%88%B6]" tabindex="-1"></a><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://www.waveshare.net/wiki/Main_Page#Robotics-robot-arms">机械手/云台控制</a></li></ul></li><li class="nav"><a href="https://www.waveshare.net/wiki/DDSM_Driver_HAT_(A)#" id="n-mcu.252Ffpga" class="dropdown-toggle" data-toggle="dropdown">MCU/FPGA <b class="caret"></b></a><ul class="dropdown-menu " role="menu"><li id="n-.255Bhttps.253A.252F.252F.257B.257Bservername.257D.257D.252Fwiki.252Fmain_page.2523arduino-main-boards-arduino.255D"><a href="invalid-title:[https://www.waveshare.net/wiki/Main_Page#Arduino-main-boards%20Arduino]" tabindex="-1"></a><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://www.waveshare.net/wiki/Main_Page#Arduino-main-boards">Arduino</a></li><li id="n-.255Bhttps.253A.252F.252F.257B.257Bservername.257D.257D.252Fwiki.252Fmain_page.2523micro.253Abit-micro.253Abit.255D"><a href="invalid-title:[https://www.waveshare.net/wiki/Main_Page#micro:bit%20micro:bit]" tabindex="-1"></a><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://www.waveshare.net/wiki/Main_Page#micro:bit">micro:bit</a></li><li id="n-.255Bhttps.253A.252F.252F.257B.257Bservername.257D.257D.252Fwiki.252Fmain_page.2523mcu.2farm-stm32" class="PIC"><a href="invalid-title:[https://www.waveshare.net/wiki/Main_Page#MCU.2FARM%20STM32" tabindex="-1">LPC</a></li><li id="n-.255Bhttps.253A.252F.252F.257B.257Bservername.257D.257D.252Fwiki.252Fmain_page.2523fpga-fpga.255D"><a href="invalid-title:[https://www.waveshare.net/wiki/Main_Page#FPGA%20FPGA]" tabindex="-1"></a><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://www.waveshare.net/wiki/Main_Page#FPGA">FPGA</a></li></ul></li>							</ul>
+						
+													<ul class="nav navbar-nav navbar-right">
+							</ul>
+				<form class="navbar-form navbar-right" action="https://www.waveshare.net/w/index.php" id="searchform">
+					<div class="form-group"><input type="search" name="search" placeholder="搜索" title="搜索Waveshare Wiki[alt-shift-f]" accesskey="f" id="searchInput" class="search-query form-control"><input type="submit" name="go" value="前往" title="若相同标题存在，则直接前往该页面" id="mw-searchButton" class="searchButton btn hidden">
+					</div>
+				</form><ul class="nav navbar-nav navbar-right">							</ul>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			<!-- /navbar -->
+					<div id="mw-page-base"></div>
+			<div id="mw-head-base"></div>
+			<a id="top"></a>
+
+			<!-- content -->
+			<div id="contentwrapper" class="user-loggedout not-editable container with-navbar with-navbar-fixed">
+
+				
+				<div class="row">
+					<div class="col-md-offset-2 col-md-10" role="main">
+								<div class="mw-body" id="content">
+			<div id="mw-js-message" style="display:none;"></div>
+									<h1 id="firstHeading" class="firstHeading page-header" lang="zh-Hans-CN"><span dir="auto">DDSM Driver HAT (A)</span></h1>
+									<!-- bodyContent -->
+			<div id="bodyContent">
+								<div id="siteSub">来自Waveshare Wiki</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					跳转至：					<a href="https://www.waveshare.net/wiki/DDSM_Driver_HAT_(A)#mw-navigation">导航</a>、					<a href="https://www.waveshare.net/wiki/DDSM_Driver_HAT_(A)#p-search">搜索</a>
+				</div>
+				<div id="mw-content-text" lang="zh-Hans-CN" dir="ltr" class="mw-content-ltr"><div class="mw-parser-output"><div class="wiki-pages black-color">
+<div class="tabber">
+<table class="a-r at-c roundy bgd-black bl-black" style="margin-left: 5px; margin-bottom: 5px;">
+
+<tbody><tr>
+<td colspan="2">
+<table class="at-c roundy" style="background: transparent;width:100%;">
+
+<tbody><tr>
+<td class="at-c textwhite"><span style="font-size:18px; line-height:36px"><b>DDSM Driver HAT (A)</b></span>
+</td></tr>
+<tr>
+<td class="at-c bgwhite" style="margin:5px;"><a href="https://www.waveshare.net/shop/DDSM-Driver-HAT-A.htm" title="点击购买 DDSM Driver HAT ((A)" target="_blank" rel="nofollow noreferrer noopener"><img alt="RoArm-M2-S" src="./DDSM Driver HAT (A) - Waveshare Wiki_files/360px-DDSM_Driver_HAT_(A).jpg" decoding="async" loading="lazy" width="360" height="270" srcset="/w/upload/thumb/8/80/DDSM_Driver_HAT_%28A%29.jpg/540px-DDSM_Driver_HAT_%28A%29.jpg 1.5x, /w/upload/thumb/8/80/DDSM_Driver_HAT_%28A%29.jpg/720px-DDSM_Driver_HAT_%28A%29.jpg 2x"></a>
+</td></tr></tbody></table>
+</td></tr>
+<tr style="display:none;">
+<td colspan="2">
+<table class="roundy" style="background: transparent;width:100%;">
+
+<tbody><tr>
+<td class="at-c textwhite"><b>{{{name2}}}</b>
+</td></tr>
+<tr>
+<td class="at-c bgwhite" style="margin:5px;">
+</td></tr></tbody></table>
+</td></tr>
+<tr style="display:none;">
+<td>
+<table class="roundy" style="background: transparent;width:100%;">
+
+<tbody><tr>
+<td class="at-c textwhite"><b>{{{name3}}}</b>
+</td></tr>
+<tr>
+<td class="at-c bgwhite" style="margin:5px;">
+</td></tr></tbody></table>
+</td></tr>
+<tr>
+<td colspan="2">
+<table class="roundy" style="background: transparent; border-collapse:collapse;width:100%;display:none;">
+<tbody><tr>
+<td style="width:2%;">
+</td>
+<td style="width:3%;">
+</td>
+<th colspan="2" width="90%" class="alignt-center roundytop bgl-white">基本信息
+</th>
+<td style="width:3%;">
+</td>
+<td style="width:2%;">
+</td></tr>
+<tr>
+<th colspan="3" width="90px" class="alignt-right roundytl bgwhite b-black" style="border-width: 0 0 1px 0;">分类：
+</th>
+<td colspan="3" class="at-l roundytr b-black bgwhite" style="border-width: 0 0 1px 0;">机器人扩展板
+</td></tr>
+<tr>
+<th colspan="3" width="90px" class="alignt-right bgwhite b-black" style="border-width: 0 0 1px 0;">功能：
+</th>
+<td colspan="3" class="at-l b-black bgwhite" style="border-width: 0 0 1px 0;">轮毂电机控制/ESP32
+</td></tr>
+<tr style="display:none;">
+<th colspan="3" width="90px" class="alignt-right bgwhite b-black" style="border-width: 0 0 1px 0;">{{{userDefinedInfo1}}}：
+</th>
+<td colspan="3" class="at-l b-black bgwhite" style="border-width: 0 0 1px 0;">{{{userdefinedvalue1}}}
+</td></tr>
+<tr style="display:none;">
+<th colspan="3" width="90px" class="alignt-right bgwhite b-black" style="border-width: 0 0 1px 0;">{{{userDefinedInfo2}}}：
+</th>
+<td colspan="3" class="at-l b-black bgwhite" style="border-width: 0 0 1px 0;">{{{userdefinedvalue2}}}
+</td></tr>
+<tr style="display:none;">
+<th colspan="3" width="90px" class="alignt-right bgwhite b-black" style="border-width: 0 0 1px 0;">{{{userDefinedInfo3}}}：
+</th>
+<td colspan="3" class="at-l b-black bgwhite" style="border-width: 0 0 1px 0;">{{{userdefinedvalue3}}}
+</td></tr>
+<tr style="display:none;">
+<th colspan="3" width="90px" class="alignt-right bgwhite b-black" style="border-width: 0 0 1px 0;">{{{userDefinedInfo4}}}：
+</th>
+<td colspan="3" class="at-l b-black bgwhite" style="border-width: 0 0 1px 0;">{{{userdefinedvalue4}}}
+</td></tr>
+<tr style="display:none;">
+<th colspan="3" width="90px" class="alignt-right bgwhite b-black" style="border-width: 0 0 1px 0;">{{{userDefinedInfo5}}}：
+</th>
+<td colspan="3" class="at-l b-black bgwhite" style="border-width: 0 0 1px 0;">{{{userdefinedvalue5}}}
+</td></tr>
+<tr style="display:none;">
+<th colspan="3" width="90px" class="alignt-right bgwhite b-black" style="border-width: 0 0 1px 0;">{{{userDefinedInfo6}}}：
+</th>
+<td colspan="3" class="at-l b-black bgwhite" style="border-width: 0 0 1px 0;">{{{userdefinedvalue6}}}
+</td></tr>
+<tr>
+<th colspan="3" width="90px" class="alignt-right roundybl bgwhite">品牌：
+</th>
+<td colspan="3" class="at-l roundybr bgwhite">Waveshare
+</td></tr></tbody></table>
+</td></tr>
+<tr>
+<td colspan="2">
+<table class="align-right roundy" style="background: transparent; border-collapse:collapse;width:100%;">
+<tbody><tr>
+<td style="width:2%;">
+</td>
+<td style="width:3%;">
+</td>
+<th colspan="2" width="90%" class="alignt-center roundytop"><font color="white">板载接口</font>
+</th>
+<td style="width:3%;">
+</td>
+<td style="width:2%;">
+</td></tr>
+<tr>
+<td colspan="6" class="at-c">
+<table class="roundy bd-未知 bgl-未知 textblack bw-1 fulltable" style="text-align:center">
+
+<tbody><tr>
+<td>
+<table class="roundy bgwhite fulltable" style="text-align:center">
+
+<tbody><tr>
+<td class="roundy bl-black bw-1" style="width:25%"><small><a href="https://www.waveshare.net/wiki/%E5%88%86%E7%B1%BB:UART%E6%8E%A5%E5%8F%A3" title="分类:UART接口">UART</a></small>
+</td>
+<td class="roundy bl-black bw-1" style="width:25%"><small><a href="https://www.waveshare.net/wiki/%E5%88%86%E7%B1%BB:RS485%E6%8E%A5%E5%8F%A3" title="分类:RS485接口">RS485</a></small>
+</td>
+<td class="roundy bl-black bw-1" style="width:25%"><small><a href="https://www.waveshare.net/wiki/%E5%88%86%E7%B1%BB:USB%E6%8E%A5%E5%8F%A3" title="分类:USB接口">USB</a></small>
+</td>
+<td class="roundy bl-black bw-1 hide" style="width:25%"><small></small>
+</td></tr>
+<tr>
+<td class="roundy bl-black bw-1 hide" style="width:25%"><small></small>
+</td>
+<td class="roundy bl-black bw-1 hide" style="width:25%"><small></small>
+</td>
+<td class="roundy bl-black bw-1 hide" style="width:25%"><small></small>
+</td>
+<td class="roundy bl-black bw-1 hide" style="width:25%"><small></small>
+</td></tr>
+<tr>
+<td class="roundy bl-black bw-1 hide" style="width:25%"><small></small>
+</td>
+<td class="roundy bl-black bw-1 hide" style="width:25%"><small></small>
+</td>
+<td class="roundy bl-black bw-1 hide" style="width:25%"><small></small>
+</td>
+<td class="roundy bl-black bw-1 hide" style="width:25%"><small></small>
+</td></tr>
+<tr>
+<td class="roundy bl-black bw-1 hide" style="width:25%"><small></small>
+</td>
+<td class="roundy bl-black bw-1 hide" style="width:25%"><small></small>
+</td>
+<td class="roundy bl-black bw-1 hide" style="width:25%"><small></small>
+</td>
+<td class="roundy bl-black bw-1 hide" style="width:25%"><small></small>
+</td></tr>
+<tr>
+<td class="roundy bl-black bw-1 hide" style="width:25%"><small></small>
+</td>
+<td class="roundy bl-black bw-1 hide" style="width:25%"><small></small>
+</td>
+<td class="roundy bl-black bw-1 hide" style="width:25%"><small></small>
+</td>
+<td class="roundy bl-black bw-1 hide" style="width:25%"><small></small>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr>
+<tr>
+<td colspan="2">
+<table class="align-right roundy" style="background: transparent; border-collapse:collapse;width:100%;display:none;">
+<tbody><tr>
+<td style="width:2%;">
+</td>
+<td style="width:3%;">
+</td>
+<th colspan="2" width="90%" class="alignt-center roundytop"><font color="white">相关产品</font>
+</th>
+<td style="width:3%;">
+</td>
+<td style="width:2%;">
+</td></tr>
+<tr>
+<td colspan="6" class="at-c">
+<table class="roundy mw-collapsible mw-collapsed align-left mw-made-collapsible">
+
+<tbody><tr>
+<th><span class="mw-collapsible-toggle mw-collapsible-toggle-default mw-collapsible-toggle-collapsed" role="button" tabindex="0" aria-expanded="false"><a class="mw-collapsible-text">展开</a></span>
+</th></tr>
+<tr style="display:none;">
+<th>♦   {{{Product1}}}
+</th></tr>
+<tr style="display:none;">
+<th>♦   {{{Product2}}}
+</th></tr>
+<tr style="display:none;">
+<th>♦   {{{Product3}}}
+</th></tr>
+<tr style="display:none;">
+<th>♦   {{{Product4}}}
+</th></tr>
+<tr style="display: none;">
+<th>
+<table class="roundy mw-collapsible mw-collapsed align-left mw-made-collapsible">
+
+<tbody><tr style="display:none;">
+<td><span class="mw-collapsible-toggle mw-collapsible-toggle-default mw-collapsible-toggle-collapsed" role="button" tabindex="0" aria-expanded="false"><a class="mw-collapsible-text">展开</a></span>♦   <b>套餐模块</b>
+</td></tr>
+<tr style="display:none;">
+<td>
+</td></tr></tbody></table>
+</th></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</div>
+
+
+<h1><span id="产品说明"></span><span class="mw-headline" id=".E4.BA.A7.E5.93.81.E8.AF.B4.E6.98.8E"><b>产品说明</b></span></h1>
+<p>这是一款用于 DDSM 系列直驱伺服轮毂电机的驱动板，板载 4 路 DDSM115 电机接口，4 路 DDSM210 接口，集成 ESP32 和轮毂电机控制电路，我们开源了轮毂电机控制例程和 JSON 通信接口，用户可以通过 USB 连接，使用上位机发送 JSON 格式的指令来控制轮毂电机，并获取 JSON 格式的反馈（电机的电流，转速，温度等信息）。
+</p><p>用户也可以对其进行二次开发，作为机器人项目的下位机来使用。
+</p><p><br>
+</p>
+<h1><span id="产品特性"></span><span class="mw-headline" id=".E4.BA.A7.E5.93.81.E7.89.B9.E6.80.A7"><b>产品特性</b></span></h1>
+<ul><li>用于驱动 DDSM 系列轮毂电机：DDSM115、DDSM210</li>
+<li>板载4路 DDSM115 电机接口，4路 DDSM210 接口</li>
+<li>提供易于使用的 DDSM 轮毂电机控制例程和 SDK</li>
+<li>支持多种有线和无线通信方式，支持 JSON 指令交互，方便上位机控制</li>
+<li>支持安装树莓派，集成5V降压稳压电路可为树莓派供电，通过GPIO串口进行通信，降低接线复杂度</li>
+<li>集成 WEB 应用用于控制和设置 DDSM 轮毂电机，方便调试</li>
+<li>可通过 Type-C 接口与 DDSM 轮毂电机直接通信</li></ul>
+<ul><li class="mw-empty-elt"></li></ul>
+<h1><span id="板载资源"></span><span class="mw-headline" id=".E6.9D.BF.E8.BD.BD.E8.B5.84.E6.BA.90"><b>板载资源</b></span></h1>
+<p><a href="https://www.waveshare.net/wiki/%E6%96%87%E4%BB%B6:DDSM-Driver-HAT-A-details-intro.jpg" class="image fancybox"><img alt="DDSM-Driver-HAT-A-details-intro.jpg" src="./DDSM Driver HAT (A) - Waveshare Wiki_files/DDSM-Driver-HAT-A-details-intro.jpg" decoding="async" loading="lazy" width="1000" height="552"></a>
+</p><p><a href="https://www.waveshare.net/wiki/%E6%96%87%E4%BB%B6:DDSM_Driver_HAT_(A)%E8%B5%84%E6%BA%90%E7%AE%80%E4%BB%8B.png" class="image fancybox"><img alt="DDSM Driver HAT (A)资源简介.png" src="./DDSM Driver HAT (A) - Waveshare Wiki_files/DDSM_Driver_HAT_(A)资源简介.png" decoding="async" loading="lazy" width="1000" height="381"></a>
+</p><p><br>
+</p>
+<h1><span id="使用前注意事项"></span><span class="mw-headline" id=".E4.BD.BF.E7.94.A8.E5.89.8D.E6.B3.A8.E6.84.8F.E4.BA.8B.E9.A1.B9"><b>使用前注意事项</b></span></h1>
+<ol><li>由于轮毂电机结构特殊，<font color="#FF0000">不能直接放置在桌面上让其转动</font>，最好将轮毂电机的轴固定，如果您没有对应的结构件来安装轮毂电机，可以设置心跳函数来让轮毂电机自动停止转动，具体方法会在后续介绍；也可以使用我们的悬挂结构件 <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://www.waveshare.net/shop/UGV-Suspension-A.htm">UGV Suspension (A)</a> 或 <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://www.waveshare.net/shop/UGV-Suspension-B.htm">UGV Suspension (B)</a> 来安装轮毂电机，具体根据您的轮毂电机型号选择对应的结构件。<br><a href="https://www.waveshare.net/wiki/%E6%96%87%E4%BB%B6:DDSM_%E7%BB%93%E6%9E%84%E4%BB%B6%E9%80%89%E6%8B%A9.png" class="image fancybox"><img alt="DDSM 结构件选择.png" src="./DDSM Driver HAT (A) - Waveshare Wiki_files/550px-DDSM_结构件选择.png" decoding="async" loading="lazy" width="550" height="265" srcset="/w/upload/thumb/d/d9/DDSM_%E7%BB%93%E6%9E%84%E4%BB%B6%E9%80%89%E6%8B%A9.png/825px-DDSM_%E7%BB%93%E6%9E%84%E4%BB%B6%E9%80%89%E6%8B%A9.png 1.5x, /w/upload/d/d9/DDSM_%E7%BB%93%E6%9E%84%E4%BB%B6%E9%80%89%E6%8B%A9.png 2x"></a></li>
+<li>目前只有 DDSM115 和 DDSM210 两款轮毂电机。<font color="#FF0000">不同型号的轮毂电机不能同时混用</font>，因为控制指令和反馈信息都是不同的，在您为电机设置ID前，先不要连接电机和驱动板。</li></ol>
+<p><br>
+</p>
+<h1><span id="基础使用"></span><span class="mw-headline" id=".E5.9F.BA.E7.A1.80.E4.BD.BF.E7.94.A8"><b>基础使用</b></span></h1>
+<h2><span id="电源准备"></span><span class="mw-headline" id=".E7.94.B5.E6.BA.90.E5.87.86.E5.A4.87"><b>电源准备</b></span></h2>
+<p>准备 DDSM Driver HAT (A) 驱动板的供电电源，可以通过 DC5525 或者 XT60 两个供电接口的其中一个进行供电。
+</p><p>DDSM Driver HAT (A) 驱动板支持 9~28V DC 电源，但具体的电源规格需要根据您所使用的 DDSM 轮毂电机的型号来确定：
+</p>
+<ul><li>使用 DDSM115 时，供电范围为 12~24V；</li>
+<li>使用 DDSM210 时，供电范围为 11~22V；</li></ul>
+<p>电源的电流要根据轮毂电机的工作需求来选择，支持的电流越大越好，在我们的使用测试中，使用 24V 6A 的电源可适用于绝大部分场景。
+</p>
+<h2><span id="ESP32_使用控制"></span><span class="mw-headline" id="ESP32_.E4.BD.BF.E7.94.A8.E6.8E.A7.E5.88.B6"><b>ESP32 使用控制</b></span></h2>
+<p>DDSM Driver HAT (A) 驱动板出厂上默认带有轮毂电机的控制例程，确保“串口控制切换开关”位于 ESP32 的档位（如下图），此时轮毂电机可以接收来自 ESP32 的控制指令。通过 DC5525 或 XT60 两个供电接口给驱动板供电，驱动板上的 ESP32 会自动开机并同时建立热点供用户连接。
+</p><p><a href="https://www.waveshare.net/wiki/%E6%96%87%E4%BB%B6:DDSM-Driver-HAT-A-ESP32%E6%A1%A3%E4%BD%8D.jpg" class="image fancybox"><img alt="DDSM-Driver-HAT-A-ESP32档位.jpg" src="./DDSM Driver HAT (A) - Waveshare Wiki_files/800px-DDSM-Driver-HAT-A-ESP32档位.jpg" decoding="async" loading="lazy" width="800" height="525" srcset="/w/upload/7/79/DDSM-Driver-HAT-A-ESP32%E6%A1%A3%E4%BD%8D.jpg 1.5x"></a>
+</p>
+<ul><li>ESP32 建立的热点名称默认为 ESP32-AP，默认密码为 12345678，您可以使用手机、平板或PC连接这个热点，然后打开浏览器，地址栏输入 192.168.4.1，访问轮毂电机 Web 控制应用。</li>
+<li>Web 控制应用中有一个 JSON 指令输入框，下面是 JSON 指令案例，您可以通过点击下面 JSON 指令案例旁的 “INPUT” 来将对应的 JSON 指令自动填写到输入框中，然后再更改输入框中指令的值，更改后点击 “SEND” 将指令发送到 ESP32。</li></ul>
+<p><a href="https://www.waveshare.net/wiki/%E6%96%87%E4%BB%B6:DDSM-sendjson.png" class="image fancybox"><img alt="DDSM-sendjson.png" src="./DDSM Driver HAT (A) - Waveshare Wiki_files/DDSM-sendjson.png" decoding="async" loading="lazy" width="600" height="278"></a>
+</p>
+<ul><li>根据您需要控制的轮毂电机型号向驱动板发送指令设置驱动板的通信规则类型。驱动板出厂默认会按照 DDSM115 的通信规则来解析轮毂电机的控制和反馈指令。
+<ul><li>如果需要控制的是 DDSM210 轮毂电机，则点击 DDSM CTRL 中的 CMD_TYPE_DDSM210 这条 JSON 指令旁的 “INPUT”，可以看见这条对应的 JSON 指令填写到上方的输入框中，接着点击 “SEND” 进行发送，即将驱动板设置成按照 DDSM210 的通信规则来解析轮毂电机的控制和反馈指令。</li>
+<li>如果设置成 DDSM210 的通信规则情况下，需要控制的是 DDSM115 轮毂电机，则通过 DDSM CTRL 中的 CMD_TYPE_DDSM115 这条 JSON 指令来设置成 DDSM115 的通信规则。</li>
+<li>这个过程可以不需要连接轮毂电机，每次驱动板上电仅需进行一次该设置。</li></ul></li></ul>
+<p><br>
+</p>
+<h2><span id="设置电机_ID"></span><span class="mw-headline" id=".E8.AE.BE.E7.BD.AE.E7.94.B5.E6.9C.BA_ID"><b>设置电机 ID</b></span></h2>
+<p>每个轮毂电机在出厂时的 ID 默认为1，因此在进行轮毂电机控制之前，需要为每个轮毂电机设置 ID。
+</p>
+<ol><li>将需要设置 ID 的轮毂电机与驱动板连接。注意：驱动板上只能连接有一个轮毂电机，如果连接了多个轮毂电机，那么驱动板上所连接的轮毂电机都会被设置为相同的新 ID。</li>
+<li>通过 DC5525 或 XT60 两个供电接口给驱动板供电，使用手机、平板或PC连接 ESP32-AP 的热点（密码为12345678），打开浏览器访问 192.168.4.1 轮毂电机 Web 控制应用。</li>
+<li>点击 DDSM CTRL 中的 CMD_DDSM_CHANGE_ID 这条指令旁的 “INPUT”，可以看见上方输入框中显示设置电机 ID 的 JSON 指令为：{"T":10011,"id":1}，其中：
+<ul><li>T：设置电机 ID 的指令类型为 10011。不同指令操作都有各自对应的指令类型。固定值，不能修改。</li>
+<li>id：更改为需要设置轮毂电机的 ID 数值，为 1~253。新设置的 ID 支持断电保存。</li></ul></li></ol>
+<p>若您忘记之前给轮毂电机设置的 ID，或者需要查看 ID 设置是否成功，可以发送 DDSM CTRL 中的 CMD_DDSM_ID_CHECK 这条指令即可查询轮毂电机 ID。反馈的信息为：
+</p>
+<pre>{"T":20010,"id":6,"typ":210,"spd":-1,"crt":-2,"act":1,"tep":40,"err":0}
+</pre>
+<p><br>
+</p>
+<h2><span id="速度闭环控制"></span><span class="mw-headline" id=".E9.80.9F.E5.BA.A6.E9.97.AD.E7.8E.AF.E6.8E.A7.E5.88.B6"><b>速度闭环控制</b></span></h2>
+<h3><span id="设置心跳函数"></span><span class="mw-headline" id=".E8.AE.BE.E7.BD.AE.E5.BF.83.E8.B7.B3.E5.87.BD.E6.95.B0"><b>设置心跳函数</b></span></h3>
+<p>在进行轮毂电机的转动控制前，您需要将轮毂电机的轴固定，如果您目前没有对应的结构件来固定电机轴，可以设置心跳函数来让轮毂电机自动停止转动（默认的速度环模式下）。
+</p>
+<ul><li>点击 CMD_HEARTBEAT_TIME 这条指令旁的 “INPUT”，可以看见 Web 界面上方输入框中显示设置心跳函数的 JSON 指令为：{"T":11001,"time":2000}，其中：
+<ul><li>T：设置心跳函数的指令类型为 11001。固定值，不能修改。</li>
+<li>time：时间，单位是 ms。当 time 值为 -1 时，心跳函数功能关闭；当 time 值为 2000 时，发送运动控制指令后 2 秒钟内如果没有接收到新的指令，驱动板会自动控制轮毂电机停止转动，这样可以避免轮毂电机一直转动下去。</li></ul></li></ul>
+<p>有两点注意事项：
+</p>
+<ol><li>我们提供的例程中，心跳函数仅作用于 ID 为 1、2、3、4 的这四个轮毂电机；</li>
+<li>当轮毂电机处于位置环模式时，最好关闭心跳函数（即 time 值为 -1 时），否则在位置环模式下自动执行心跳函数会导致轮毂电机回复到 0 位置。</li></ol>
+<pre>例子：
+你可以设置一条 time 值为 1000 的心跳函数指令，在输入框中的 JSON 指令输入：{"T":11001,"time":1000}，点击 SEND 发送，这样当你控制 ID 为 1、2、3、4 的轮毂电机转动时，它转动 1 秒钟后会自动停止，这样防止无结构件固定电机轴的情况下电机突然转动引起的危险。
+</pre>
+<h3><span id="进行速度控制"></span><span class="mw-headline" id=".E8.BF.9B.E8.A1.8C.E9.80.9F.E5.BA.A6.E6.8E.A7.E5.88.B6"><b>进行速度控制</b></span></h3>
+<ul><li>点击 CMD_DDSM_CTRL 这条 JSON 指令旁的 “INPUT”，可以看见 Web 界面上方输入框中显示速度环控制电机的 JSON 指令为：{"T":10010,"id":1,"cmd":50,"act":3}，其中：
+<ul><li>T：设置心跳函数的指令类型为 11001。固定值，不能修改。</li>
+<li>id：改成需要控制轮毂电机的 ID。</li>
+<li>cmd：动作指令的值，具体需要对应具体模式环的取值范围。</li>
+<li>act：每一转的加速时间，单位为 0.1ms。act 值越大，速度变化越柔和。</li></ul></li>
+<li>在默认的速度环模式下，cmd 值，对于 DDSM115 和 DDSM210 这两种轮毂电机来说都是目标转速的值，但是单位不同，DDSM115 的 cmd 值单位是 转/分钟（ rpm）；DDSM210 的 cmd 值的单位是 0.1 转/分钟（0.1rpm）。例如：如果 cmd 值为100，对于 DDSM115 来说是目标速度 100 rpm，对于 DDSM210 来说是目标速度 10 rpm。</li></ul>
+<p>点击 SEND 发送这个指令之后，轮毂电机会开始转动。如果你没有设置心跳函数（心跳函数的 time 值为 -1）轮毂电机会一直转动下去，之后你可以使用上面的速度控制指令，将目标转速 cmd 值改为 0，可以令轮毂电机停止转动。也可以使用 CMD_DDSM_STOP 指令来让电机停止转动。
+</p><p><br>
+</p>
+<h2><span id="电机模式切换"></span><span class="mw-headline" id=".E7.94.B5.E6.9C.BA.E6.A8.A1.E5.BC.8F.E5.88.87.E6.8D.A2"><b>电机模式切换</b></span></h2>
+<p>轮毂电机支持不同的电机模式切换，但是重新上电后的轮毂电机默认都是处于速度环模式下（即速度闭环控制的部分）。
+</p><p>可以使用 CMD_CHANGE_MODE 这条指令来切换模式环，可以看见 JSON 指令显示为：{"T":10012,"id":1,"mode":2}，其中：
+</p>
+<ul><li>T：电机模式切换的指令类型为 10012。固定值，不能修改。</li>
+<li>id：需要切换电机模式的 ID。</li>
+<li>mode：电机模式对应的值。具体如下：
+<ul><li>0：开环，仅 DDSM210 有开环模式，类似于直流电机的 PWM 控制（同样的，当这一数值过低时电机不会转动，需要达到某一阈值后才能开始转动），cmd 值的绝对值越大，加速度越大，cmd 值的取值范围为 -32767 ~ 32767。</li>
+<li>1：电流环，仅 DDSM115 有电流环模式，闭环控制电流的大小，CMD_DDSM_CTRL 的 cmd 值（一下简称 cmd 值，因为无论什么模式坏，都是由 CMD_DDSM_CTRL 这条 JSON 指令来控制的）的绝对值越大，加速度越大，cmd 值的取值范围为 -32767 ~ 32767，对应 -8A ~ 8A，但是 DDSM115 最大只支持到 2.7 A。</li>
+<li>2：速度环，DDSM115 与 DDSM210 都具备的模式，也是轮毂电机上电后的默认模式，可闭环控制速度大小，cmd 值得取值范围根据电机的极限转速来确定，电机的极限转速取决于电源的供电能力和电机的负载大小，负载越大可以达到的极限转速越小。DDSM115 在无负载时可以达到 200 rpm；DDSM210 在无负载时可以达到 210 rpm。</li>
+<li>3：位置环，DDSM115 与 DDSM210 都具备的模式，当电机切换为位置环时的转速不能过快，最好在电机静止时切换位置环，切换位置环时的位置为 cmd 值为 0 时的位置，但是已经处于位置环的电机再次接收切换位置环的指令时，位置 0 不会更新，位置环下的 cmd 值的取值范围为 0 ~ 32767 (0 ~ 360°)，数值逐渐增加为顺时针转动，且电机会自动按照最短的路径规划来运动到目标位置，例如：电机目前处于位置 0，但是你需要让它逆时针转动到某一个位置，这时的 cmd 值应该大于 32767/2，因为它逆时针转到目标位置的路程更近。</li></ul></li></ul>
+<p><br>
+</p>
+<h2><span id="获取电机反馈"></span><span class="mw-headline" id=".E8.8E.B7.E5.8F.96.E7.94.B5.E6.9C.BA.E5.8F.8D.E9.A6.88"><b>获取电机反馈</b></span></h2>
+<ul><li>每次使用 CMD_DDSM_CTRL 控制电机时，电机都会反馈当前的状态信息。</li>
+<li>您可以使用 CMD_DDSM_INFO 这条命令获取其它信息反馈。</li></ul>
+<p><br>
+</p>
+<h2><span id="JSON_指令表"></span><span class="mw-headline" id="JSON_.E6.8C.87.E4.BB.A4.E8.A1.A8"><b>JSON 指令表</b></span></h2>
+<h3><span id="电机控制"></span><span class="mw-headline" id=".E7.94.B5.E6.9C.BA.E6.8E.A7.E5.88.B6"><b>电机控制</b></span></h3>
+<ul><li>{"T":10010,"id":1,"cmd":50,"act":3}——电机模式控制指令
+<ul><li>id：改成需要控制轮毂电机的 ID。</li>
+<li>cmd：动作指令的值，具体需要对应具体模式环的取值范围。</li>
+<li>act：每一转的加速时间，单位为 0.1ms。act 值越大，速度变化越柔和。</li></ul></li></ul>
+<ul><li>{"T":10011,"id":2}——设置电机 ID 指令
+<ul><li>id：更改为需要设置轮毂电机的 ID 数值，为 1~253。新设置的 ID 支持断电保存。</li></ul></li></ul>
+<ul><li>{"T":10012,"id":1,"mode":2}——切换电机模式指令
+<ul><li>id：需要切换电机模式的 ID。</li>
+<li>mode：电机模式对应的值。具体电机可切换的模式参考<a href="https://www.waveshare.net/wiki/DDSM_Driver_HAT_(A)#.E7.94.B5.E6.9C.BA.E6.A8.A1.E5.BC.8F.E5.88.87.E6.8D.A2"><b>基础使用中电机模式切换部分</b></a>。</li></ul></li></ul>
+<ul><li>{"T":10031}——查看电机 ID 指令（此时有且仅允许一个电机连接在驱动板上）</li></ul>
+<ul><li>{"T":10032,"id":1}——查看电机其它信息指令
+<ul><li>id：需要查看的电机 ID。</li></ul></li></ul>
+<ul><li>{"T":11001,"time":2000}——设置心跳函数指令
+<ul><li>time：时间，单位是 ms。当 time 值为 -1 时，心跳函数功能关闭；当 time 值为 2000 时，发送运动控制指令后 2 秒钟内如果没有接收到新的指令，驱动板会自动控制轮毂电机停止转动，这样可以避免轮毂电机一直转动下去。</li></ul></li></ul>
+<ul><li>{"T":11002,"type":115}——更改驱动板电机类型指令
+<ul><li>type：要控制电机型号。型号为 DDSM210 轮毂电机时，type 则为 210；型号为 DDSM115 轮毂电机时，type 则为 115。</li></ul></li></ul>
+<h3><span id="WIFI_设置"></span><span class="mw-headline" id="WIFI_.E8.AE.BE.E7.BD.AE"><b>WIFI 设置</b></span></h3>
+<ul><li>{"T":10401,"cmd":3}——设置驱动板通电后 WIFI 的默认模式
+<ul><li>cmd：默认模式的代号。0：WIFI 关闭；1：AP模式；2：STA模式；3：AP+STA模式。</li></ul></li></ul>
+<ul><li>{"T":10402,"ssid":"ESP32-AP","password":"12345678"}——设置 AP 模式，建立 WIFI 热点
+<ul><li>ssid：AP 模式的热点名称。</li>
+<li>password：AP 模式的热点密码。</li></ul></li></ul>
+<ul><li>{"T":10403,"ssid":"EM","password":"bubu6788"}——设置 STA 模式，让驱动板连接到您现有的 WIFI
+<ul><li>ssid：现有 WIFI 的热点名称，需要修改为你想要连接的 WIFI 热点名。</li>
+<li>password：现有 WIFI 热点的密码，需要修改为 WIFI 热点对应的密码。</li></ul></li></ul>
+<ul><li>{"T":10404,"ap_ssid":"ESP32-AP","ap_password":"12345678","sta_ssid":"JSBZY-2.4G","sta_password":"waveshare0755"}——设置AP+STA模式，建立WIFI热点的同时连接到现有的WIFI</li></ul>
+<ul><li>{"T":10405}——查看 WIFI 设置信息</li></ul>
+<ul><li>{"T":10408}——断开 WIFI 连接</li></ul>
+<p><br>
+</p>
+<h3><span id="ESP32_设置"></span><span class="mw-headline" id="ESP32_.E8.AE.BE.E7.BD.AE"><b>ESP32 设置</b></span></h3>
+<ul><li>{"T":600}——ESP32 重启</li></ul>
+<ul><li>{"T":601}——获得 Flash 空间剩余大小</li></ul>
+<ul><li>{"T":604}——清空 nvs 区（如果有任何功能错误，发送该指令清空 nvs 区后给驱动板重新上电）</li></ul>
+<p><br>
+</p><p><br>
+</p>
+
+</body></html>
