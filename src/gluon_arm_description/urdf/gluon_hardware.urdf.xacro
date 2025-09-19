@@ -1,17 +1,16 @@
 <?xml version="1.0"?>
 <robot name="gluon" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <!-- Include the robot description and ros2_control configuration -->
   <xacro:include filename="$(find gluon_arm_description)/urdf/gluon_robot.urdf.xacro" />
   <xacro:include filename="$(find gluon_arm_description)/urdf/gluon_ros2_control.xacro" />
   
   <!-- Instantiate the robot -->
   <xacro:gluon_robot/>
   
-  <!-- Add the ros2_control component for simulation with mock hardware -->
+  <!-- Add the ros2_control component for real hardware -->
   <xacro:gluon_ros2_control 
     name="GluonRobot" 
-    use_mock_hardware="true" 
-    hardware_plugin="mock_components/GenericSystem"/>
+    use_mock_hardware="false" 
+    hardware_plugin="gluon_hardware/GluonHardware"/>
 
 </robot>

@@ -1,13 +1,21 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="gluon">
 
-  <xacro:macro name="arm_controller" params="name">
-
+  <xacro:macro name="gluon_ros2_control" params="name use_mock_hardware:=true hardware_plugin:=mock_components/GenericSystem">
     <ros2_control name="${name}" type="system">
-      <hardware>
-        <plugin>mock_components/GenericSystem</plugin>
-        <param name="calculate_dynamics">True</param>
-      </hardware>
+      <xacro:if value="${use_mock_hardware}">
+        <hardware>
+          <plugin>${hardware_plugin}</plugin>
+          <param name="calculate_dynamics">True</param>
+        </hardware>
+      </xacro:if>
+      <xacro:unless value="${use_mock_hardware}">
+        <hardware>
+          <plugin>${hardware_plugin}</plugin>
+          <!-- Add real hardware specific parameters here -->
+        </hardware>
+      </xacro:unless>
+      
       <joint name="axis_joint_1">
         <command_interface name="position">
           <param name="min">-2.44</param>
@@ -63,7 +71,6 @@
         <state_interface name="effort"/>
       </joint>
     </ros2_control>
-
   </xacro:macro>
 
 </robot>

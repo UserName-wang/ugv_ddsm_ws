@@ -17,18 +17,22 @@ This package provides launch files and configurations for bringing up the Gluon 
 gluon_arm_bringup/
 ├── config/                    # Controller configurations
 │   ├── gluon_controllers.yaml # Main controller configuration
-│   └── gluon_controllers_moveit.yaml # MoveIt configuration
+│   ├── gluon_controllers_moveit.yaml # MoveIt configuration
+│   ├── gluon_hardware_controllers.yaml # Hardware-specific controller configuration
+│   └── gluon_simulation_controllers.yaml # Simulation-specific controller configuration
 ├── launch/                    # Launch files
-│   └── gluon_arm.launch.py    # Main launch file
+│   ├── gluon_arm.launch.py    # Main launch file with mode selection
+│   ├── gluon_hardware.launch.py # Hardware-specific launch file
+│   └── gluon_simulation.launch.py # Simulation-specific launch file
 ├── README.md                  # This file
 └── package.xml
 ```
 
 ## Usage
 
-### Launch the Gluon Arm System
+### Launch the Gluon Arm System in Simulation Mode (Default)
 
-To launch the Gluon arm with visualization in RViz:
+To launch the Gluon arm with visualization in RViz in simulation mode:
 
 ```bash
 cd ~/study/ros/ugv_ddsm_ws
@@ -42,6 +46,30 @@ This will start:
 - Joint State Broadcaster
 - Joint Trajectory Controller
 - RViz visualization
+
+### Launch the Gluon Arm System in Real Hardware Mode
+
+To launch the Gluon arm with real hardware:
+
+```bash
+cd ~/study/ros/ugv_ddsm_ws
+source install/setup.bash
+ros2 launch gluon_arm_bringup gluon_arm.launch.py use_sim:=false
+```
+
+### Launch Specific Modes Directly
+
+You can also launch specific modes directly:
+
+Simulation mode:
+```bash
+ros2 launch gluon_arm_bringup gluon_simulation.launch.py
+```
+
+Hardware mode:
+```bash
+ros2 launch gluon_arm_bringup gluon_hardware.launch.py
+```
 
 ### Control the Arm Using Command Line
 

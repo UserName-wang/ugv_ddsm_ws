@@ -37,11 +37,21 @@ gluon_arm_description/
 │   ├── 5_Link.STL
 │   └── 6_Link.STL
 ├── urdf/
-│   ├── gluon.urdf.xacro    # Main URDF with robot description
-│   ├── gluon_sim.urdf.xacro # URDF for simulation
+│   ├── gluon.urdf.xacro    # Main URDF with robot description (single entry point for all configurations)
+│   ├── gluon_robot.urdf.xacro # Robot physical description only (used by other xacro files)
 │   └── gluon_ros2_control.xacro # ROS2 control configuration
 └── README.md
 ```
+
+## URDF Structure Explanation
+
+The URDF files are organized in a modular way to allow easy switching between simulation and real hardware:
+
+1. **gluon_robot.urdf.xacro** - Contains only the physical description of the robot (links and joints)
+2. **gluon_ros2_control.xacro** - Contains the ros2_control definitions with conditional hardware selection
+3. **gluon.urdf.xacro** - Main entry point that uses arguments to configure hardware (replaces separate sim/hardware files)
+
+This modular approach allows using the same physical description for both simulation and real hardware while easily switching between different control configurations through command-line arguments.
 
 ## Dependencies
 
@@ -72,6 +82,25 @@ In RViz, you can:
 - Use the joint sliders in the joint_state_publisher_gui window to move the arm
 - View the TF frames to understand the coordinate systems
 - Examine the visual and collision geometries
+
+## URDF Usage Examples
+
+The single URDF file supports multiple configurations through command-line arguments:
+
+1. **Simulation mode (default)**:
+   ```bash
+   xacro gluon.urdf.xacro
+   ```
+
+2. **Real hardware mode**:
+   ```bash
+   xacro gluon.urdf.xacro use_mock_hardware:=false hardware_plugin:=gluon_hardware/GluonHardware
+   ```
+
+3. **Custom hardware**:
+   ```bash
+   xacro gluon.urdf.xacro use_mock_hardware:=false hardware_plugin:=your.hardware.plugin
+   ```
 
 ## URDF Details
 

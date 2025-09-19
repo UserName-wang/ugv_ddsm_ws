@@ -4,7 +4,6 @@ from launch.substitutions import Command, FindExecutable, LaunchConfiguration, P
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
 from launch_ros.parameter_descriptions import ParameterValue
-from launch.conditions import IfCondition, UnlessCondition
 
 
 def generate_launch_description():
@@ -20,43 +19,17 @@ def generate_launch_description():
     
     declared_arguments.append(
         DeclareLaunchArgument(
-            "use_sim",
-            default_value="true",
-            description="Use simulation (true) or real hardware (false).",
-        )
-    )
-    
-    declared_arguments.append(
-        DeclareLaunchArgument(
             "hardware_plugin",
             default_value="mock_components/GenericSystem",
-            description="Hardware plugin to use for real hardware.",
+            description="Hardware plugin to use.",
         )
     )
 
     # Initialize Arguments
     description_file = LaunchConfiguration("description_file")
-    use_sim = LaunchConfiguration("use_sim")
     hardware_plugin = LaunchConfiguration("hardware_plugin")
 
-    # Robot description for simulation
-    robot_description_content_sim = ParameterValue(
-        Command(
-            [
-                PathJoinSubstitution([FindExecutable(name="xacro")]),
-                " ",
-                PathJoinSubstitution(
-                    [FindPackageShare("gluon_arm_description"), "urdf", description_file]
-                ),
-                " ",
-                "use_mock_hardware:=true"
-            ]
-        ),
-        value_type=str
-    )
-    
-    # Robot description for real hardware
-    robot_description_content_hw = ParameterValue(
+    robot_description_content = ParameterValue(
         Command(
             [
                 PathJoinSubstitution([FindExecutable(name="xacro")]),
@@ -74,51 +47,28 @@ def generate_launch_description():
         value_type=str
     )
     
+    robot_description = {"robot_description": robot_description_content}
+
     rviz_config_file = PathJoinSubstitution(
         [FindPackageShare("gluon_arm_description"), "config", "gluon.rviz"]
     )
-    
-    # Controller config files
-    ros_control_config_sim = PathJoinSubstitution(
-        [FindPackageShare("gluon_arm_bringup"), "config", "gluon_simulation_controllers.yaml"]
-    )
-    
-    ros_control_config_hw = PathJoinSubstitution(
+    ros_control_config = PathJoinSubstitution(
         [FindPackageShare("gluon_arm_bringup"), "config", "gluon_hardware_controllers.yaml"]
     )
     
-    robot_state_publisher_node_sim = Node(
+    robot_state_publisher_node = Node(
         package="robot_state_publisher",
         executable="robot_state_publisher",
         output="both",
-        parameters=[{"robot_description": robot_description_content_sim}],
-        condition=IfCondition(use_sim)
-    )
-    
-    robot_state_publisher_node_hw = Node(
-        package="robot_state_publisher",
-        executable="robot_state_publisher",
-        output="both",
-        parameters=[{"robot_description": robot_description_content_hw}],
-        condition=UnlessCondition(use_sim)
+        parameters=[robot_description],
     )
 
-    # Controller manager for simulation
-    controller_manager_sim = Node(
+    # Controller manager
+    controller_manager = Node(
         package='controller_manager',
         executable='ros2_control_node',
-        parameters=[{"robot_description": robot_description_content_sim}, ros_control_config_sim],
-        output='screen',
-        condition=IfCondition(use_sim)
-    )
-    
-    # Controller manager for real hardware
-    controller_manager_hw = Node(
-        package='controller_manager',
-        executable='ros2_control_node',
-        parameters=[{"robot_description": robot_description_content_hw}, ros_control_config_hw],
-        output='screen',
-        condition=UnlessCondition(use_sim)
+        parameters=[robot_description, ros_control_config],
+        output='screen'
     )
     
     # Spawn controllers
@@ -144,12 +94,10 @@ def generate_launch_description():
     )
 
     nodes_to_start = [
-        controller_manager_sim,
-        controller_manager_hw,
-        robot_state_publisher_node_sim,
-        robot_state_publisher_node_hw,
+        controller_manager,
         joint_state_broadcaster_spawner,
         arm_controller_spawner,
+        robot_state_publisher_node,
         rviz_node,
     ]
 
