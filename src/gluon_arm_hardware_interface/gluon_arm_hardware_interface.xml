@@ -1,0 +1,9 @@
+<library path="gluon_arm_hardware_interface">
+  <class name="gluon_arm_hardware/GluonArmHardwareInterface"
+         type="gluon_arm_hardware::GluonArmHardwareInterface"
+         base_class_type="hardware_interface::SystemInterface">
+    <description>
+      Hardware interface for the Gluon 6-DOF robotic arm
+    </description>
+  </class>
+</library>

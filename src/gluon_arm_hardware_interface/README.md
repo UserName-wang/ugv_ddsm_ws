@@ -35,86 +35,79 @@ gluon_arm_hardware_interface/
 └── README.md
 ```
 
-## SDK Functions
+## Building the Package
 
-The SDK provides functions for:
-
-- Connecting to actuators
-- Reading actuator status
-- Controlling actuator operation modes
-- Setting target positions, speeds, and currents
-- Error handling
-
-## Communication Protocol
-
-The actuators communicate using a specific protocol with the following command structure:
-
-```
-Frame Header | Address | Command | Data Length | Data | CRC | Frame Tail
-```
-
-Where:
-- Frame Header: 0xEE
-- Address: Actuator ID (0x01-0xFF)
-- Command: Command code
-- Data Length: Length of data field (2 bytes, big endian)
-- Data: Command-specific data
-- CRC: 2-byte checksum (big endian)
-- Frame Tail: 0xED
-
-### Common Commands
-
-| Function | Command Frame |
-|----------|---------------|
-| Handshake | `EE 00 44 00 00 ED` |
-| Query Actuators | `EE 00 02 00 00 ED` |
-| Enable Actuator (ID=0x05) | `EE 05 2A 00 01 01 7E 80 ED` |
-| Switch to Current Mode (ID=0x05) | `EE 05 11 00 01 01 7E 80 ED` |
-| Set Target Current (ID=0x05) | `EE 05 0A 00 04 00 00 00 00 00 24 ED` |
-| Read Current Position (ID=0x05) | `EE 05 06 00 00 ED` |
-| Disable Actuator (ID=0x05) | `EE 05 2A 00 01 00 BF 40 ED` |
-
-## Usage
-
-### Building the Package
+To build this package, navigate to your ROS 2 workspace and run:
 
 ```bash
-cd ~/study/ros/ugv_ddsm_ws
+cd /path/to/your/ros2/workspace
 colcon build --packages-select gluon_arm_hardware_interface
 ```
 
-### Running the Test Program
+## Running the Hardware Interface
 
-After building, you can run the test program:
+The hardware interface is designed to work with the `gluon_arm_bringup` package. To run the Gluon arm with real hardware, use:
 
 ```bash
-source install/setup.bash
-ros2 run gluon_arm_hardware_interface test_actuator
+ros2 launch gluon_arm_bringup gluon_hardware.launch.py use_mock_hardware:=false hardware_plugin:=gluon_arm_hardware/GluonArmHardwareInterface
 ```
 
-This will:
-1. Establish connection with the actuator controller
-2. Query available actuators
-3. Enable actuator ID 5
-4. Switch it to current control mode
-5. Set target current to 0A
-6. Read the actuator's current position
-7. Disable the actuator and exit
+This command will:
+1. Load the real hardware interface plugin
+2. Start the controller manager
+3. Launch the robot state publisher
+4. Start the joint state broadcaster
+5. Launch RViz for visualization
 
-## Configuration
+## Safety Considerations
 
-The SDK connects to the actuator controller at IP address `192.168.1.30` on port `2000` by default. These can be modified in the SDK source code if needed.
+For testing purposes, the current implementation puts all actuators in current mode with 0A current, which is a safe state that prevents unexpected movements. This ensures that the arm will not move when first powered on or when the hardware interface is activated.
 
-## Dependencies
+## Testing the Interface
 
-- ROS 2 (Foxy or later)
-- Standard C++ libraries
-- CMake build system
+You can test the hardware interface with a simple joint trajectory command:
 
-## Troubleshooting
+```bash
+ros2 topic pub /arm_controller/joint_trajectory trajectory_msgs/msg/JointTrajectory "{
+  header: {
+    stamp: {sec: 0, nanosec: 0},
+    frame_id: ''
+  },
+  joint_names: ['axis_joint_1', 'axis_joint_2', 'axis_joint_3', 'axis_joint_4', 'axis_joint_5', 'axis_joint_6'],
+  points: [
+    {
+      positions: [0.1, 0.1, 0.1, 0.1, 0.1, 0.1],
+      velocities: [],
+      accelerations: [],
+      effort: [],
+      time_from_start: {sec: 2, nanosec: 0}
+    }
+  ]
+}" -1
+```
 
-If you encounter connection issues:
-1. Verify the controller is powered on and connected to the network
-2. Check that the IP address and port in the SDK match your controller settings
-3. Ensure your computer can reach the controller (try `ping 192.168.1.30`)
-4. Confirm that no firewall is blocking UDP traffic on port 2000
+Note that in the current safety configuration, this command will not cause actual movement. To enable position control, the write() function in the hardware interface needs to be modified.
+
+## Monitoring Hardware Components
+
+To check if the hardware interface is properly loaded, use:
+
+```bash
+ros2 control list_hardware_components
+```
+
+This should show the GluonArmHardwareInterface as an active system component.
+
+To list active controllers:
+
+```bash
+ros2 control list_controllers
+```
+
+## Viewing Joint States
+
+To monitor the current joint positions published by the hardware interface:
+
+```bash
+ros2 topic echo /joint_states
+```
